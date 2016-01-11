@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="testPhing" default="list-tasks">
+
+    <target name="list-tasks">
+        <exec command="./bin/phing -f ${phing.file} -l" outputProperty="phing_targets" />
+        <echo>${phing_targets}</echo>
+    </target>
+
+    <target name="install-dependencies">
+        <phingcall target="composer:install" />
+        <phingcall target="npm:install" />
+        <phingcall target="bower:install" />
+        <phingcall target="gulp:dist" />
+        <phingcall target="symfony:assets" />
+    </target>
+
+    <target name="rebuild-project">
+        <phingcall target="reset-db" />
+    </target>
+
+    <target name="reset-db">
+        <phingcall target="db:drop" />
+        <phingcall target="db:create" />
+        <phingcall target="db:fixtures:load" />
+    </target>
+</project>

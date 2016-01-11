@@ -1,0 +1,12 @@
+{
+    "name": "grzegorz/test-phing",
+    "require": {
+        "phing/phing": "^2.13"
+    },
+    "authors": [
+        {
+            "name": "Grzegorz Kaszuba",
+            "email": "uirapuru@tlen.pl"
+        }
+    ]
+}
