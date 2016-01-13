@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3751f365593df6656d81ee13f9a4d6fa",
-    "content-hash": "d77d311f960b092c28f804a986bd23c2",
+    "hash": "1228cf0ad7057737b383fac0d201421d",
+    "content-hash": "0dbbc880968f0fe5a68047b14111a289",
     "packages": [
         {
             "name": "behat/behat",
@@ -145,6 +145,123 @@
                 "parser"
             ],
             "time": "2015-12-30 14:47:00"
+        },
+        {
+            "name": "behat/mink",
+            "version": "v1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/minkphp/Mink.git",
+                "reference": "6c129030ec2cc029905cf969a56ca8f087b2dfdf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/minkphp/Mink/zipball/6c129030ec2cc029905cf969a56ca8f087b2dfdf",
+                "reference": "6c129030ec2cc029905cf969a56ca8f087b2dfdf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1",
+                "symfony/css-selector": "~2.1"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7"
+            },
+            "suggest": {
+                "behat/mink-browserkit-driver": "extremely fast headless driver for Symfony\\Kernel-based apps (Sf2, Silex)",
+                "behat/mink-goutte-driver": "fast headless driver for any app without JS emulation",
+                "behat/mink-selenium2-driver": "slow, but JS-enabled driver for any app (requires Selenium2)",
+                "behat/mink-zombie-driver": "fast and JS-enabled headless driver for any app (requires node.js)"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Behat\\Mink\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com",
+                    "homepage": "http://everzet.com"
+                }
+            ],
+            "description": "Browser controller/emulator abstraction for PHP",
+            "homepage": "http://mink.behat.org/",
+            "keywords": [
+                "browser",
+                "testing",
+                "web"
+            ],
+            "time": "2015-09-20 20:24:03"
+        },
+        {
+            "name": "behat/mink-extension",
+            "version": "v2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Behat/MinkExtension.git",
+                "reference": "06e2b99d92e175719d7e841d5be16b7df1a233c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Behat/MinkExtension/zipball/06e2b99d92e175719d7e841d5be16b7df1a233c5",
+                "reference": "06e2b99d92e175719d7e841d5be16b7df1a233c5",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "~3.0,>=3.0.5",
+                "behat/mink": "~1.5",
+                "php": ">=5.3.2",
+                "symfony/config": "~2.2"
+            },
+            "require-dev": {
+                "behat/mink-goutte-driver": "~1.1",
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "behat-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Behat\\MinkExtension": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christophe Coevoet",
+                    "email": "stof@notk.org"
+                },
+                {
+                    "name": "Konstantin Kudryashov",
+                    "email": "ever.zet@gmail.com"
+                }
+            ],
+            "description": "Mink extension for Behat",
+            "homepage": "http://extensions.behat.org/mink",
+            "keywords": [
+                "browser",
+                "gui",
+                "test",
+                "web"
+            ],
+            "time": "2015-09-29 17:42:41"
         },
         {
             "name": "behat/symfony2-extension",

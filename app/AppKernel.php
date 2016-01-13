@@ -14,7 +14,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
+//            new FOS\UserBundle\FOSUserBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
 
@@ -22,7 +22,7 @@ class AppKernel extends Kernel
 //            new SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
         );
 
-        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+        if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
@@ -35,7 +35,7 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
+        $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
     }
 
     public function boot()
