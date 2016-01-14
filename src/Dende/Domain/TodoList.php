@@ -49,4 +49,12 @@ class TodoList
     {
 
     }
+
+    /**
+     * @return string
+     */
+    public function id()
+    {
+        return $this->id;
+    }
 }

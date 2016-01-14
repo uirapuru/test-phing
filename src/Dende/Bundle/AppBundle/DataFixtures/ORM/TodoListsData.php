@@ -10,14 +10,14 @@ use VM\CommonBundle\DataFixtures\BaseFixture;
  * Class CalendarsData
  * @package Dende\CalendarBundle\Tests\DataFixtures\Standard\ORM
  */
-final class TodoListData extends BaseFixture
+final class TodoListsData extends BaseFixture
 {
     /**
      * @return int
      */
     public function getOrder()
     {
-        return 0;
+        return 10;
     }
 
     /**

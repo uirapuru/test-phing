@@ -1,0 +1,40 @@
+---
+first-task:
+  id:       1
+  title:    First task's title
+  content:  First task's content
+  list:     list-grzegorz
+  finished: ~
+  deleted:  ~
+
+second-task:
+  id:       2
+  title:    Second task's title
+  content:  First task's content
+  list:     list-grzegorz
+  finished: ~
+  deleted:  ~
+
+finished-task:
+  id:       3
+  title:    Finished task
+  content:  Some content
+  list:     list-grzegorz
+  finished: 1 hour ago
+  deleted:  ~
+
+deleted-task:
+  id:       4
+  title:    Deleted task
+  content:  Some content
+  list:     list-grzegorz
+  finished: ~
+  deleted:  2 hours ago
+
+finished-and-deleted-task:
+  id:       5
+  title:    Finished and then deleted task
+  content:  Some content
+  list:     list-grzegorz
+  finished: 3 hours ago
+  deleted:  2 hours ago

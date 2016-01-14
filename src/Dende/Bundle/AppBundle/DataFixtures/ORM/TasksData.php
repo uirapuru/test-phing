@@ -15,7 +15,7 @@ final class TasksData extends BaseFixture
      */
     public function getOrder()
     {
-        return 0;
+        return 20;
     }
 
     /**
@@ -26,7 +26,11 @@ final class TasksData extends BaseFixture
     {
         return $this->container->get("dende_todo.factory.task")->createFromArray([
             "id" => $params["id"],
-            "title" => $params["name"]
+            "title" => $params["name"],
+            "content" => $params["content"],
+            "list" => $this->getReference($params["list"]),
+            "finished" => $params["finished"],
+            "deleted" => $params["deleted"],
         ]);
     }
 }

@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f7897204-712f-411d-8144-2010432098ef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dende/Application/Factory/TaskFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dende/Application/Factory/TodoListFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TasksData.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TodoListData.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/Resources/config/services.yml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Dende/Domain/Trashcan.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/behat.yml" afterPath="$PROJECT_DIR$/app/behat.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/Yaml/tasks.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/Yaml/todolists.yml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TodoListData.php" afterPath="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TodoListsData.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml" afterPath="$PROJECT_DIR$/app/config/parameters.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/phing_defaults.ini" afterPath="$PROJECT_DIR$/app/config/phing_defaults.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dende/Domain/Task.php" afterPath="$PROJECT_DIR$/src/Dende/Domain/Task.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dende/Application/Context/FeatureContext.php" afterPath="$PROJECT_DIR$/src/Dende/Application/Context/FeatureContext.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dende/Application/Repository/InMemory/InMemoryListRepository.php" afterPath="$PROJECT_DIR$/src/Dende/Application/Repository/InMemory/InMemoryListRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dende/Application/Repository/ListRepositoryInterface.php" afterPath="$PROJECT_DIR$/src/Dende/Application/Repository/ListRepositoryInterface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TasksData.php" afterPath="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TasksData.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dende/Domain/TodoList.php" afterPath="$PROJECT_DIR$/src/Dende/Domain/TodoList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/vm-pl/common-bundle/composer.json" afterPath="$PROJECT_DIR$/vendor/vm-pl/common-bundle/composer.json" />
     </list>
     <ignored path="testPhing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,11 +44,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="testing.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/vm-pl/common-bundle/Resources/phing/testing.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.5">
+              <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="database.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/vm-pl/common-bundle/Resources/phing/database.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.78571427">
-              <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.0">
+              <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -56,27 +68,57 @@
         <entry file="file://$PROJECT_DIR$/app/config/phing_defaults.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
+              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testing.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vendor/vm-pl/common-bundle/Resources/phing/testing.xml">
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/vm-pl/common-bundle/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24122807">
-              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.69086653">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.xml">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5714285">
-              <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tasks.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/Yaml/tasks.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="15" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TodoListsData.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TodoListsData.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -86,7 +128,7 @@
         <entry file="file://$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TasksData.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-9.428572">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
               <folding>
                 <element signature="e#58#80#0#PHP" expanded="true" />
               </folding>
@@ -94,51 +136,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Task.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dende/Domain/Task.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.9285715">
-              <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TodoList.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dende/Domain/TodoList.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.357142">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="behat.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/behat.yml">
+      <file leaf-file-name="todolists.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/Yaml/todolists.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adding_new_task.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/features/adding_new_task.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TodoListData.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TodoListData.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.428572">
-              <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -168,35 +170,39 @@
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/behat.yml" />
         <option value="$PROJECT_DIR$/src/Dende/Application/Repository/InMemoryListRepository.php" />
-        <option value="$PROJECT_DIR$/src/Dende/Application/Repository/ListRepositoryInterface.php" />
-        <option value="$PROJECT_DIR$/src/Dende/Application/Repository/InMemory/InMemoryListRepository.php" />
         <option value="$PROJECT_DIR$/src/Dende/Application/Repository/TaskRepositoryInterface.php" />
         <option value="$PROJECT_DIR$/src/Dende/Application/Repository/InMemory/InMemoryTaskRepository.php" />
         <option value="$PROJECT_DIR$/vendor/behat/behat/features/bootstrap/FeatureContext.php" />
         <option value="$PROJECT_DIR$/app/Resources/features/adding_new_task.feature" />
-        <option value="$PROJECT_DIR$/src/Dende/Application/Context/FeatureContext.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/vendor/vm-pl/common-bundle/DataFixtures/FixtureInterface.php" />
         <option value="$PROJECT_DIR$/vendor/vm-pl/common-bundle/.php_cs" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/Capfile" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/CurrentDirTrait.php" />
-        <option value="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TasksData.php" />
         <option value="$PROJECT_DIR$/vendor/vm-pl/common-bundle/DataFixtures/BaseFixture.php" />
         <option value="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TodoListData.php" />
         <option value="$PROJECT_DIR$/src/Dende/Application/Factory/TaskFactory.php" />
         <option value="$PROJECT_DIR$/src/Dende/Application/Factory/TodoListFactory.php" />
         <option value="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/Resources/config/services.yml" />
-        <option value="$PROJECT_DIR$/src/Dende/Domain/TodoList.php" />
         <option value="$PROJECT_DIR$/src/Dende/Domain/Trashcan.php" />
         <option value="$PROJECT_DIR$/src/Dende/Domain/Task.php" />
-        <option value="$PROJECT_DIR$/vendor/vm-pl/common-bundle/Resources/phing/database.xml" />
         <option value="$PROJECT_DIR$/app/behat.yml" />
-        <option value="$PROJECT_DIR$/app/config/phing_defaults.ini" />
         <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/vendor/vm-pl/common-bundle/Resources/phing/testing.xml" />
+        <option value="$PROJECT_DIR$/src/Dende/Application/Context/FeatureContext.php" />
+        <option value="$PROJECT_DIR$/src/Dende/Application/Repository/ListRepositoryInterface.php" />
+        <option value="$PROJECT_DIR$/src/Dende/Application/Repository/InMemory/InMemoryListRepository.php" />
+        <option value="$PROJECT_DIR$/src/Dende/Domain/TodoList.php" />
+        <option value="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/Yaml/tasks.yml" />
+        <option value="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/Yaml/todolists.yml" />
+        <option value="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TasksData.php" />
+        <option value="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TodoListsData.php" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/vendor/vm-pl/common-bundle/Resources/phing/database.xml" />
+        <option value="$PROJECT_DIR$/app/config/phing_defaults.ini" />
+        <option value="$PROJECT_DIR$/vendor/vm-pl/common-bundle/composer.json" />
       </list>
     </option>
   </component>
@@ -349,10 +355,6 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -369,10 +371,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Dende" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Domain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -420,7 +418,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Application" />
+              <option name="myItemId" value="Bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataFixtures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yaml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testPhing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testPhing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Dende" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DataFixtures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ORM" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -438,6 +482,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testPhing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="testPhing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -449,23 +511,24 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="js-jscs-nodeInterpreter" value="/usr/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="MinkContext&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="Task&#9;FILE&#9;file:///var/www/testPhing/src/Dende/Domain/Task.php&#10;feat&#9;FILE&#9;file:///var/www/testPhing/src/Dende/Application/Context/FeatureContext.php&#10;MinkContext&#9;null&#9;null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Dende/Application/Repository" />
+    <property name="php.override.implement.member.chooser.php.doc" value="INHERIT" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/Yaml" />
       <recent name="$PROJECT_DIR$/src/Dende/Application/Factory" />
       <recent name="$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM" />
       <recent name="$PROJECT_DIR$/src/Dende/Application/Repository/InMemory" />
       <recent name="$PROJECT_DIR$/features" />
-      <recent name="$PROJECT_DIR$/src/Dende/Domain/Command" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/vendor/vm-pl/common-bundle" />
       <recent name="$PROJECT_DIR$/src/Dende/Application/Repository/InMemory" />
       <recent name="$PROJECT_DIR$/app/Resources" />
-      <recent name="$PROJECT_DIR$/tests" />
     </key>
   </component>
   <component name="RunManager">
@@ -554,13 +617,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Dende/Domain/Task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -665,22 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dende/Application/Repository/ListRepositoryInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5714285">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dende/Application/Repository/InMemory/InMemoryListRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9285715">
-          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Dende/Application/Repository/TaskRepositoryInterface.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.06864274">
@@ -693,24 +733,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03432137">
           <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dende/Application/Context/FeatureContext.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.6785715">
-          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
-          <folding>
-            <element signature="e#44#94#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vm-pl/common-bundle/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58666664">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -756,22 +778,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -869,10 +875,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TodoListData.php">
+    <entry file="file://$PROJECT_DIR$/app/behat.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.428572">
-          <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.09090909">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="3" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -880,50 +886,8 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/features/adding_new_task.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vm-pl/common-bundle/Resources/phing/database.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.78571427">
-          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/phing_defaults.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="58" selection-start-line="2" selection-start-column="58" selection-end-line="2" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dende/Domain/TodoList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.357142">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dende/Domain/Task.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.9285715">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TasksData.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.428572">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="e#58#80#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -935,18 +899,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/behat.yml">
+    <entry file="file://$PROJECT_DIR$/src/Dende/Application/Repository/ListRepositoryInterface.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.928572">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dende/Application/Context/FeatureContext.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.928572">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dende/Application/Repository/InMemory/InMemoryListRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.928572">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="e#56#113#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dende/Domain/TodoList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.571428">
+          <caret line="55" column="21" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dende/Domain/Task.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.5">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="55" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/Yaml/todolists.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TasksData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.428572">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <element signature="e#58#80#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/ORM/TodoListsData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="52" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dende/Bundle/AppBundle/DataFixtures/Yaml/tasks.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/vm-pl/common-bundle/Resources/phing/testing.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24122807">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        <state vertical-scroll-proportion="-5.5">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/vm-pl/common-bundle/Resources/phing/database.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.0">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/phing_defaults.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/vm-pl/common-bundle/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.69086653">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
           <folding />
         </state>
       </provider>
