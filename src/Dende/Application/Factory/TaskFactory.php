@@ -15,6 +15,13 @@ class TaskFactory
      */
     public function createFromArray(array $array)
     {
-        return new Task();
+        return new Task(
+            $array["id"],
+            $array["title"],
+            $array["content"],
+            $array["list"],
+            $array["finished"],
+            $array["deleted"]
+        );
     }
 }

@@ -28,7 +28,7 @@ final class TodoListsData extends BaseFixture
     {
         return $this->container->get("dende_todo.factory.todo_list")->createFromArray([
             "id" => $params["id"],
-            "title" => $params["name"]
+            "title" => $params["title"]
         ]);
     }
 }

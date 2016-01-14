@@ -1,0 +1,38 @@
+Dende\Domain\Task:
+  type:   entity
+  table:  tasks
+  repositoryClass:  Dende\Bundle\AppBundle\Repository\TasksRepository
+
+  manyToOne:
+    list:
+      targetEntity: Dende\Domain\TodoList
+      inversedBy: tasks
+      cascade: ["all"]
+
+  id:
+    id:
+      type: guid
+      generator: { strategy: UUID }
+
+#  gedmo:
+#    soft_deleteable:
+#      field_name: deleted
+#      time_aware: false
+
+  fields:
+    title:
+      type: string
+      nullable: false
+
+    content:
+      type: string
+      nullable: true
+
+    finished:
+      type: datetime
+      nullable: true
+
+    deleted:
+      name: deleted
+      type: datetime
+      nullable: true

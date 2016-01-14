@@ -1,0 +1,20 @@
+---
+Dende\Domain\TodoList:
+  type:   entity
+  table:  lists
+  repositoryClass:  Dende\Bundle\AppBundle\Repository\TodoListRepository
+
+  id:
+    id:
+      type: guid
+      generator: { strategy: UUID }
+
+  oneToMany:
+    tasks:
+      targetEntity: Dende\Domain\Task
+      mappedBy: list
+
+  fields:
+    title:
+      type: string
+      nullable: false

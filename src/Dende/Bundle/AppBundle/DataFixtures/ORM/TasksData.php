@@ -26,11 +26,11 @@ final class TasksData extends BaseFixture
     {
         return $this->container->get("dende_todo.factory.task")->createFromArray([
             "id" => $params["id"],
-            "title" => $params["name"],
+            "title" => $params["title"],
             "content" => $params["content"],
             "list" => $this->getReference($params["list"]),
-            "finished" => $params["finished"],
-            "deleted" => $params["deleted"],
+            "finished" => is_null($params["finished"]) ? null : new \DateTime($params["finished"]),
+            "deleted" => is_null($params["deleted"]) ? null : new \DateTime($params["deleted"]),
         ]);
     }
 }

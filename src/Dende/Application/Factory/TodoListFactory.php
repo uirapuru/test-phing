@@ -15,6 +15,9 @@ class TodoListFactory
      */
     public function createFromArray(array $array)
     {
-        return new TodoList();
+        return new TodoList(
+            $array["id"],
+            $array["title"]
+        );
     }
 }

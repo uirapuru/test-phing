@@ -16,6 +16,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
+      <parameter key="TodoAppBundle">Dende\Bundle\AppBundle\TodoAppBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -688,7 +689,9 @@
     <service id="request" scope="request" synthetic="true" synchronized="true">
       <deprecated>The "%service_id%" service is deprecated since Symfony 2.7 and will be removed in 3.0. Use the "request_stack" service instead.</deprecated>
     </service>
-    <service id="service_container" synthetic="true"/>
+    <service id="service_container" synthetic="true">
+      <autowiring-type>Symfony\Component\DependencyInjection\ContainerInterface</autowiring-type>
+    </service>
     <service id="kernel" synthetic="true"/>
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
@@ -1155,6 +1158,18 @@
     </service>
     <service id="form.type.choice" class="Symfony\Component\Form\Extension\Core\Type\ChoiceType">
       <tag name="form.type" alias="choice"/>
+      <argument type="service">
+        <service class="Symfony\Component\Form\ChoiceList\Factory\CachingFactoryDecorator" public="false">
+          <argument type="service">
+            <service class="Symfony\Component\Form\ChoiceList\Factory\PropertyAccessDecorator" public="false">
+              <argument type="service">
+                <service class="Symfony\Component\Form\ChoiceList\Factory\DefaultChoiceListFactory" public="false"/>
+              </argument>
+              <argument type="service" id="property_accessor"/>
+            </service>
+          </argument>
+        </service>
+      </argument>
     </service>
     <service id="form.type.collection" class="Symfony\Component\Form\Extension\Core\Type\CollectionType">
       <tag name="form.type" alias="collection"/>
@@ -1612,7 +1627,7 @@
       <tag name="monolog.logger" channel="php"/>
       <argument>null</argument>
       <argument type="service" id="monolog.logger.php" on-invalid="null"/>
-      <argument>null</argument>
+      <argument>-4182</argument>
       <argument>null</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -1763,7 +1778,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5697c2ff1f4d99.66616517</argument>
+            <argument>5697cbb016cb81.08111332</argument>
           </service>
         </argument>
       </argument>
@@ -1892,7 +1907,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>5697c2ff1f4d99.66616517</argument>
+            <argument>5697cbb016cb81.08111332</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2344,7 +2359,9 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument key="App">Dende\Domain</argument>
+            </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
@@ -2357,7 +2374,21 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false"/>
+              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="/var/www/testPhing/src/Dende/Bundle/AppBundle/Resources/config/doctrine">Dende\Domain</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>Dende\Domain</argument>
+                </call>
+              </service>
             </argument>
           </call>
           <call method="setProxyDir">
@@ -2393,6 +2424,8 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
       <configurator service="doctrine.orm.default_manager_configurator" method="configure"/>
     </service>
+    <service id="dende_todo.factory.todo_list" class="Dende\Application\Factory\TodoListFactory"/>
+    <service id="dende_todo.factory.task" class="Dende\Application\Factory\TaskFactory"/>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
       <argument type="service" id="debug.stopwatch" on-invalid="ignore"/>
@@ -2705,6 +2738,10 @@
       <call method="addPath">
         <argument>/var/www/testPhing/vendor/doctrine/doctrine-bundle/Resources/views</argument>
         <argument>Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/testPhing/src/Dende/Bundle/AppBundle/Resources/views</argument>
+        <argument>TodoApp</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/testPhing/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
