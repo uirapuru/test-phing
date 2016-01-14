@@ -2,7 +2,7 @@ default:
     suites:
         domain:
             paths:
-                - %paths.base%/app/Resources/features
+                - %paths.base%/Resources/features
             contexts:
                 - Dende\Application\Context\FeatureContext: ~
 #    extensions:

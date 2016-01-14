@@ -1,0 +1,7 @@
+---
+services:
+  dende_todo.factory.todo_list:
+    class: Dende\Application\Factory\TodoListFactory
+
+  dende_todo.factory.task:
+    class: Dende\Application\Factory\TaskFactory

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="testPhing" default="list-tasks" basedir=".">
     <property file="${project.basedir}/app/config/phing_defaults.ini" />
-    <import file="vendor/vm-pl/common-bundle/Resources/phing/database.xml" />
 
-    <target name="list-tasks">
+    <import file="vendor/vm-pl/common-bundle/Resources/phing/database.xml" />
+    <import file="vendor/vm-pl/common-bundle/Resources/phing/testing.xml" />
+
+    <target name="list-tasks" hidden="true">
         <exec command="./bin/phing -f ${phing.file} -l" outputProperty="phing_targets" />
         <echo>${phing_targets}</echo>
     </target>
@@ -16,7 +18,7 @@
         <!--<phingcall target="symfony:assets" />-->
     <!--</target>-->
 
-    <target name="rebuild-project">
+    <target name="rebuild-project" description="Brings project to default state">
         <phingcall target="reset-db" />
     </target>
 
