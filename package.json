@@ -1,0 +1,27 @@
+{
+  "name": "test-phing",
+  "version": "1.0.0",
+  "description": "test application",
+  "main": "web/app.php",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uirapuru/test-phing.git"
+  },
+  "author": "Uirapuru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uirapuru/test-phing/issues"
+  },
+  "homepage": "https://github.com/uirapuru/test-phing#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "phantomjs": "^1.9.19"
+  }
+}
