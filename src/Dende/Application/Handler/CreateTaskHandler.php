@@ -54,12 +54,14 @@ class CreateTaskHandler
             "title" => $createTaskCommand->title,
             "content" => $createTaskCommand->content,
             "list" => $list,
-            "finished" => null,
+            "finished" => $createTaskCommand->finished,
             "deleted" => null
         ]);
 
         $list->addTask($task);
 
         $this->tasksRepository->insert($task);
+
+        // throw create event
     }
 }

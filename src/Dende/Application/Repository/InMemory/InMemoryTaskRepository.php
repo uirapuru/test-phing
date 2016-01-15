@@ -42,6 +42,18 @@ class InMemoryTaskRepository implements TaskRepositoryInterface
      */
     public function findAll(array $parameters = [])
     {
-        return $this->filterRepository($this->tasks, $parameters);
+        return $this->filter($this->tasks, $parameters);
+    }
+
+    /**
+     * @param array $parameters
+     * @return Task|null
+     */
+    public function findOne(array $parameters = [])
+    {
+        $result = $this->findAll($parameters);
+        if(count($result) > 0) {
+            return array_pop($result);
+        }
     }
 }

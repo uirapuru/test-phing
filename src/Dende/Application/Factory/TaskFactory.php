@@ -27,6 +27,10 @@ class TaskFactory
         );
     }
 
+    /**
+     * @param $array
+     * @return array
+     */
     private function prepareData($array)
     {
         $template = [
@@ -38,7 +42,6 @@ class TaskFactory
             "deleted" => null,
         ];
 
-        return array_merge($array, $template);
-
+        return array_merge($template, $array);
     }
 }

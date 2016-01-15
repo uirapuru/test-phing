@@ -1,5 +1,6 @@
 <?php
 namespace Dende\Domain;
+use Dende\Application\Command\UpdateTask;
 
 /**
  * Class Task
@@ -91,5 +92,23 @@ class Task
     public function deleted()
     {
         return $this->deleted;
+    }
+
+    /**
+     * @return TodoList
+     */
+    public function todoList()
+    {
+        return $this->list;
+    }
+
+    /**
+     * @param UpdateTask $command
+     */
+    public function updateWithCommand(UpdateTask $command) {
+        $this->title = $command->title;
+        $this->content = $command->content;
+        $this->finished = $command->finished;
+        $this->deleted = $command->deleted;
     }
 }

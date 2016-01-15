@@ -4,7 +4,8 @@ default:
             paths:
                 - %paths.base%/Resources/features
             contexts:
-                - Dende\Application\Context\FeatureContext: ~
+                - Dende\Application\Context\AddingContext: ~
+                - Dende\Application\Context\UpdateContext: ~
 #    extensions:
 #        emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
 #            name: html

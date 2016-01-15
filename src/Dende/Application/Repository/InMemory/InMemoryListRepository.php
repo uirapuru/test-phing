@@ -46,6 +46,17 @@ class InMemoryListRepository implements ListRepositoryInterface
      */
     public function findAll(array $parameters = [])
     {
-        return $this->filterRepository($this->lists, $parameters);
+        return $this->filter($this->lists, $parameters);
     }
+
+    /**
+     * @param array $parameters
+     * @return mixed
+     */
+    public function findOne(array $parameters = [])
+    {
+        $result = $this->findAll($parameters);
+        return array_pop($result);
+    }
+
 }

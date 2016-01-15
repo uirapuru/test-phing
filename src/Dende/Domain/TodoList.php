@@ -1,5 +1,6 @@
 <?php
 namespace Dende\Domain;
+use Dende\Application\Repository\InMemory\FilterTrait;
 
 /**
  * Class TodoList
@@ -7,6 +8,8 @@ namespace Dende\Domain;
  */
 class TodoList
 {
+    use FilterTrait;
+
     /**
      * @var string
      */
@@ -74,5 +77,11 @@ class TodoList
         return $this->tasks;
     }
 
-
+    /**
+     * @return array|Task
+     */
+    public function findNotFinishedTasks()
+    {
+        return $this->filter($this->tasks(), ["finished" => null]);
+    }
 }
