@@ -5,18 +5,16 @@ Feature: Adding new task to todo list
 
   Scenario: Put one task into list
     Given: I have a list named "Grzegorz" created
-    When I create a new task with data:
-    | date                | title      | content                               | finished |
-    | 2015-01-01 12:00:00 | Buy a milk | Mom asked me to buy a bottle of milk  |          |
-    And I put it on list named "Grzegorz"
+    When I push a new tasks to list "Grzegorz"
+    | title      | content                               | finished |
+    | Buy a milk | Mom asked me to buy a bottle of milk  |          |
     Then list "Grzegorz" counts "1" tasks
     And there are "1" tasks in database
 
   Scenario: Put already done task into list
     Given: I have a list named "Grzegorz" created
-    When I create a new task with data:
-      | date                | title      | content                               | finished |
-      | 2015-01-01 12:00:00 | Buy a milk | Mom asked me to buy a bottle of milk  |        x |
-    And I put it on list named "Grzegorz"
-    Then list "Grzegorz" counts "2" tasks
+    When I push a new tasks to list "Grzegorz"
+      | title      | content                               | finished |
+      | Buy a milk | Mom asked me to buy a bottle of milk  |        x |
+    Then list "Grzegorz" counts "1" tasks
     And there are "1" tasks in database

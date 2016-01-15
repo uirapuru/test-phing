@@ -10,7 +10,12 @@ use Dende\Domain\TodoList;
  */
 class InMemoryListRepository implements ListRepositoryInterface
 {
-    private $lists;
+    use FilterTrait;
+
+    /**
+     * @var array|TodoList[]
+     */
+    private $lists = [];
 
     /**
      * @inheritDoc
@@ -39,9 +44,8 @@ class InMemoryListRepository implements ListRepositoryInterface
     /**
      * @inheritDoc
      */
-    public function find($parameters)
+    public function findAll(array $parameters = [])
     {
-        // TODO: Implement find() method.
+        return $this->filterRepository($this->lists, $parameters);
     }
-
 }

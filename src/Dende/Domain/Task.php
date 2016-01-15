@@ -46,7 +46,7 @@ class Task
      * @param \DateTime $finished
      * @param \DateTime $deleted
      */
-    public function __construct($id = null, $title = "", $content = "", TodoList $list, \DateTime $finished = null, \DateTime $deleted = null)
+    public function __construct($id = null, $title = "", $content = "", TodoList $list = null, \DateTime $finished = null, \DateTime $deleted = null)
     {
         $this->id = $id;
         $this->title = $title;
@@ -56,5 +56,40 @@ class Task
         $this->deleted = $deleted;
     }
 
+    public function id()
+    {
+        return $this->id;
+    }
 
+    /**
+     * @return string
+     */
+    public function title()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @return string
+     */
+    public function content()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function finished()
+    {
+        return $this->finished;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function deleted()
+    {
+        return $this->deleted;
+    }
 }

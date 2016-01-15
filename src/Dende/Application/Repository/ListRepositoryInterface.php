@@ -17,19 +17,25 @@ interface ListRepositoryInterface
 
     /**
      * @param TodoList $todoList
-     * @return mixed
+     * @return null
      */
     public function remove(TodoList $todoList);
 
     /**
      * @param TodoList $todoList
-     * @return mixed
+     * @return null
      */
     public function update(TodoList $todoList);
 
     /**
-     * @param $id
-     * @return mixed
+     * @param array $parameters
+     * @return TodoList[]|null
      */
-    public function find($parameters);
+    public function findAll(array $parameters = []);
+
+    /**
+     * @param array $parameters
+     * @return TodoList|null
+     */
+    public function findOne(array $parameters = []);
 }

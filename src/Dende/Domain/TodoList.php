@@ -37,7 +37,7 @@ class TodoList
 
     public function addTask(Task $task)
     {
-        
+        $this->tasks[$task->id()] = $task;
     }
 
     public function removeTask(Task $task)
@@ -57,4 +57,22 @@ class TodoList
     {
         return $this->id;
     }
+
+    /**
+     * @return string
+     */
+    public function title()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @return array
+     */
+    public function tasks()
+    {
+        return $this->tasks;
+    }
+
+
 }

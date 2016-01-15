@@ -15,6 +15,8 @@ class TaskFactory
      */
     public function createFromArray(array $array)
     {
+        $array = $this->prepareData($array);
+
         return new Task(
             $array["id"],
             $array["title"],
@@ -23,5 +25,20 @@ class TaskFactory
             $array["finished"],
             $array["deleted"]
         );
+    }
+
+    private function prepareData($array)
+    {
+        $template = [
+            "id" => null,
+            "title" => "",
+            "content" => "",
+            "list" => null,
+            "finished" => null,
+            "deleted" => null,
+        ];
+
+        return array_merge($array, $template);
+
     }
 }
