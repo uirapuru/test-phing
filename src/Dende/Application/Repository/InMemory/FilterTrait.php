@@ -9,8 +9,8 @@ trait FilterTrait
      */
     private function filter(array $data = [], array $parameters = [])
     {
-        if(count($parameters) === 0) {
-            return $data;
+        if(!array_key_exists("deleted", $parameters)) {
+            $parameters["deleted"] = null;
         }
 
         return array_filter($data, function ($object, $id) use ($parameters) {

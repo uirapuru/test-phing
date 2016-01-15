@@ -111,8 +111,9 @@ class AddingContext extends MinkContext
     {
         /** @var TodoList $list */
         $list = $this->listRepository->findOne(["title" => $listName]);
+        $tasks = $this->taskRepository->findAll(["todoList" => $list]);
 
-        $totalCount = count($list->tasks());
+        $totalCount = count($tasks);
 
         if($totalCount !== (int) $expectedCount) {
             throw new Exception(sprintf(

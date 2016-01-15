@@ -26,6 +26,11 @@ class TodoList
     private $tasks = [];
 
     /**
+     * @var \DateTime
+     */
+    private $deleted;
+
+    /**
      * TodoList constructor.
      * @param string $id
      * @param string $title
@@ -76,6 +81,16 @@ class TodoList
     {
         return $this->tasks;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function deleted()
+    {
+        return $this->deleted;
+    }
+
+
 
     /**
      * @return array|Task
