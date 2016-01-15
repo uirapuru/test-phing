@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
 
             new Dende\Bundle\AppBundle\TodoAppBundle(),
+            new VM\CommonBundle\VMCommonBundle(),
 
 //            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 //            new SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
