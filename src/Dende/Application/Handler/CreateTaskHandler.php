@@ -9,8 +9,7 @@ use Dende\Application\Repository\TaskRepositoryInterface;
 use Dende\Domain\TodoList;
 
 /**
- * Class CreateTaskHandler
- * @package Dende\Application\Handler
+ * Class CreateTaskHandler.
  */
 class CreateTaskHandler
 {
@@ -28,10 +27,11 @@ class CreateTaskHandler
 
     /**
      * CreateTaskHandler constructor.
+     *
      * @param TaskRepositoryInterface $tasksRepository
      * @param ListRepositoryInterface $listsRepository
-     * @param TaskFactory $taskFactory
-     * @param IdGeneratorInterface $idGenerator
+     * @param TaskFactory             $taskFactory
+     * @param IdGeneratorInterface    $idGenerator
      */
     public function __construct(TaskRepositoryInterface $tasksRepository, ListRepositoryInterface $listsRepository, TaskFactory $taskFactory, IdGeneratorInterface $idGenerator)
     {
@@ -47,15 +47,15 @@ class CreateTaskHandler
     public function handle(CreateTask $createTaskCommand)
     {
         /** @var TodoList $list */
-        $list = $this->listsRepository->findOne(["id" => $createTaskCommand->listId]);
+        $list = $this->listsRepository->findOne(['id' => $createTaskCommand->listId]);
 
         $task = $this->taskFactory->createFromArray([
-            "id" => $this->idGenerator->generate(),
-            "title" => $createTaskCommand->title,
-            "content" => $createTaskCommand->content,
-            "list" => $list,
-            "finished" => $createTaskCommand->finished,
-            "deleted" => null
+            'id'       => $this->idGenerator->generate(),
+            'title'    => $createTaskCommand->title,
+            'content'  => $createTaskCommand->content,
+            'list'     => $list,
+            'finished' => $createTaskCommand->finished,
+            'deleted'  => null,
         ]);
 
         $list->addTask($task);

@@ -5,8 +5,7 @@ use Dende\Application\Repository\ListRepositoryInterface;
 use Dende\Domain\TodoList;
 
 /**
- * Class InMemoryListRepository
- * @package Dende\Application\Repository\InMemory
+ * Class InMemoryListRepository.
  */
 class InMemoryListRepository implements ListRepositoryInterface
 {
@@ -18,7 +17,7 @@ class InMemoryListRepository implements ListRepositoryInterface
     private $lists = [];
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function insert(TodoList $todoList)
     {
@@ -26,7 +25,7 @@ class InMemoryListRepository implements ListRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function remove(TodoList $todoList)
     {
@@ -34,7 +33,7 @@ class InMemoryListRepository implements ListRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function update(TodoList $todoList)
     {
@@ -42,7 +41,7 @@ class InMemoryListRepository implements ListRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function findAll(array $parameters = [])
     {
@@ -51,12 +50,13 @@ class InMemoryListRepository implements ListRepositoryInterface
 
     /**
      * @param array $parameters
+     *
      * @return mixed
      */
     public function findOne(array $parameters = [])
     {
         $result = $this->findAll($parameters);
+
         return array_pop($result);
     }
-
 }

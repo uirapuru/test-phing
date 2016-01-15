@@ -14,7 +14,7 @@ class InMemoryTaskRepository implements TaskRepositoryInterface
     private $tasks = [];
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function insert(Task $task)
     {
@@ -22,7 +22,7 @@ class InMemoryTaskRepository implements TaskRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function remove(Task $task)
     {
@@ -30,7 +30,7 @@ class InMemoryTaskRepository implements TaskRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function update(Task $task)
     {
@@ -38,7 +38,7 @@ class InMemoryTaskRepository implements TaskRepositoryInterface
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function findAll(array $parameters = [])
     {
@@ -47,12 +47,13 @@ class InMemoryTaskRepository implements TaskRepositoryInterface
 
     /**
      * @param array $parameters
+     *
      * @return Task|null
      */
     public function findOne(array $parameters = [])
     {
         $result = $this->findAll($parameters);
-        if(count($result) > 0) {
+        if (count($result) > 0) {
             return array_pop($result);
         }
     }

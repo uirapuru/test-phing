@@ -5,8 +5,7 @@ use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 /**
- * Class Configuration
- * @package Dende\Bundle\AppBundle\DependencyInjection
+ * Class Configuration.
  */
 class Configuration implements ConfigurationInterface
 {
@@ -20,8 +19,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->end()
-        ;
+            ->end();
 
         return $treeBuilder;
     }

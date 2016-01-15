@@ -6,13 +6,12 @@ use Dende\Domain\TodoList;
 use Doctrine\ORM\EntityRepository;
 
 /**
- * Class TodoListRepository
- * @package Dende\Bundle\AppBundle\Repository
+ * Class TodoListRepository.
  */
 class TodoListRepository extends EntityRepository implements ListRepositoryInterface
 {
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function insert(TodoList $todoList)
     {
@@ -20,7 +19,7 @@ class TodoListRepository extends EntityRepository implements ListRepositoryInter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function remove(TodoList $todoList)
     {
@@ -28,7 +27,7 @@ class TodoListRepository extends EntityRepository implements ListRepositoryInter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function update(TodoList $todoList)
     {
@@ -36,7 +35,7 @@ class TodoListRepository extends EntityRepository implements ListRepositoryInter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function findOne(array $parameters = [])
     {

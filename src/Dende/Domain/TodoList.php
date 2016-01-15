@@ -1,10 +1,10 @@
 <?php
 namespace Dende\Domain;
+
 use Dende\Application\Repository\InMemory\FilterTrait;
 
 /**
- * Class TodoList
- * @package Dende\Domain
+ * Class TodoList.
  */
 class TodoList
 {
@@ -32,9 +32,10 @@ class TodoList
 
     /**
      * TodoList constructor.
+     *
      * @param string $id
      * @param string $title
-     * @param array $tasks
+     * @param array  $tasks
      */
     public function __construct($id, $title, array $tasks = [])
     {
@@ -50,12 +51,10 @@ class TodoList
 
     public function removeTask(Task $task)
     {
-
     }
 
     public function findTask($id)
     {
-
     }
 
     /**
@@ -90,13 +89,11 @@ class TodoList
         return $this->deleted;
     }
 
-
-
     /**
      * @return array|Task
      */
     public function findNotFinishedTasks()
     {
-        return $this->filter($this->tasks(), ["finished" => null]);
+        return $this->filter($this->tasks(), ['finished' => null]);
     }
 }

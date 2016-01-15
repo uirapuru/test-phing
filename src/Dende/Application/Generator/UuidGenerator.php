@@ -2,16 +2,15 @@
 namespace Dende\Application\Generator;
 
 /**
- * Class UuidGenerator
- * @package Dende\Application\Generator
+ * Class UuidGenerator.
  */
 class UuidGenerator implements IdGeneratorInterface
 {
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function generate()
     {
-        return uniqid("");
+        return uniqid('');
     }
 }

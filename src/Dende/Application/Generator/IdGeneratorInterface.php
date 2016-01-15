@@ -2,8 +2,7 @@
 namespace Dende\Application\Generator;
 
 /**
- * Interface IdGeneratorInterface
- * @package Dende\Application\Generator
+ * Interface IdGeneratorInterface.
  */
 interface IdGeneratorInterface
 {

@@ -1,10 +1,10 @@
 <?php
 namespace Dende\Domain;
+
 use Dende\Application\Command\UpdateTask;
 
 /**
- * Class Task
- * @package Dende\Domain
+ * Class Task.
  */
 class Task
 {
@@ -40,14 +40,15 @@ class Task
 
     /**
      * Task constructor.
-     * @param string $id
-     * @param string $title
-     * @param string $content
-     * @param TodoList $list
+     *
+     * @param string    $id
+     * @param string    $title
+     * @param string    $content
+     * @param TodoList  $list
      * @param \DateTime $finished
      * @param \DateTime $deleted
      */
-    public function __construct($id = null, $title = "", $content = "", TodoList $list = null, \DateTime $finished = null, \DateTime $deleted = null)
+    public function __construct($id = null, $title = '', $content = '', TodoList $list = null, \DateTime $finished = null, \DateTime $deleted = null)
     {
         $this->id = $id;
         $this->title = $title;
@@ -105,7 +106,8 @@ class Task
     /**
      * @param UpdateTask $command
      */
-    public function updateWithCommand(UpdateTask $command) {
+    public function updateWithCommand(UpdateTask $command)
+    {
         $this->title = $command->title;
         $this->content = $command->content;
         $this->finished = $command->finished;

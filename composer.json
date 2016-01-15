@@ -85,5 +85,8 @@
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
         }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.5"
     }
 }

@@ -2,13 +2,10 @@
 namespace Dende\Bundle\AppBundle\DataFixtures\ORM;
 
 use Dende\Domain\Task;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use VM\CommonBundle\DataFixtures\BaseFixture;
 
 /**
- * Class CalendarsData
- * @package Dende\CalendarBundle\Tests\DataFixtures\Standard\ORM
+ * Class CalendarsData.
  */
 final class TodoListsData extends BaseFixture
 {
@@ -22,13 +19,14 @@ final class TodoListsData extends BaseFixture
 
     /**
      * @param $params
+     *
      * @return Task
      */
     public function insert($params)
     {
-        return $this->container->get("dende_todo.factory.todo_list")->createFromArray([
-            "id" => $params["id"],
-            "title" => $params["title"]
+        return $this->container->get('dende_todo.factory.todo_list')->createFromArray([
+            'id'    => $params['id'],
+            'title' => $params['title'],
         ]);
     }
 }

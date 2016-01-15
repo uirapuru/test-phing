@@ -2,13 +2,12 @@
 namespace Dende\Application\Test\Unit\Handler;
 
 /**
- * Class CreateTaskHandlerTest
- * @package Dende\Application\Test\Unit\Handler
+ * Class CreateTaskHandlerTest.
  */
 class CreateTaskHandlerTest extends \PHPUnit_Framework_TestCase
 {
     public function testHandle()
     {
-        $this->markTestSkipped("skipped domain unit test");
+        $this->markTestSkipped('skipped domain unit test');
     }
 }

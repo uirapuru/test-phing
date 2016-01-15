@@ -1,7 +1,6 @@
 <?php
 namespace Dende\Application\Context;
 
-use Behat\Behat\Tester\Exception\PendingException;
 use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext;
 use DateTime;
@@ -20,8 +19,7 @@ use Dende\Domain\TodoList;
 use Symfony\Component\Config\Definition\Exception\Exception;
 
 /**
- * Class AddingContext
- * @package Dende\Application\Context
+ * Class AddingContext.
  */
 class AddingContext extends MinkContext
 {
@@ -49,9 +47,9 @@ class AddingContext extends MinkContext
         $this->taskRepository = new InMemoryTaskRepository();
 
         $list = (new TodoListFactory())->createFromArray([
-            "id" => "1",
-            "title" => "Grzegorz",
-            "tasks" => []
+            'id'    => '1',
+            'title' => 'Grzegorz',
+            'tasks' => [],
         ]);
 
         $this->listRepository->insert($list);
@@ -74,9 +72,9 @@ class AddingContext extends MinkContext
     {
         $totalCount = count($this->taskRepository->findAll());
 
-        if($totalCount !== (int) $expectedCount) {
+        if ($totalCount !== (int) $expectedCount) {
             throw new Exception(sprintf(
-                "Expected %d tasks in db, but there is %d",
+                'Expected %d tasks in db, but there is %d',
                 $expectedCount,
                 $totalCount
             ));
@@ -90,14 +88,13 @@ class AddingContext extends MinkContext
     public function iPushANewTasksToList($listName, TableNode $table)
     {
         /** @var TodoList $list */
-        $list = $this->listRepository->findOne(["title" => $listName]);
+        $list = $this->listRepository->findOne(['title' => $listName]);
 
-        foreach($table as $row)
-        {
+        foreach ($table as $row) {
             $createTaskCommand = new CreateTask();
-            $createTaskCommand->title = $row["title"];
-            $createTaskCommand->content = $row["content"];
-            $createTaskCommand->finished = $row["finished"] !== "" ? new Datetime($row["finished"]) : null;
+            $createTaskCommand->title = $row['title'];
+            $createTaskCommand->content = $row['content'];
+            $createTaskCommand->finished = $row['finished'] !== '' ? new Datetime($row['finished']) : null;
             $createTaskCommand->listId = $list->id();
 
             $this->createTaskHandler->handle($createTaskCommand);
@@ -110,12 +107,12 @@ class AddingContext extends MinkContext
     public function listCountsTasks($listName, $expectedCount)
     {
         /** @var TodoList $list */
-        $list = $this->listRepository->findOne(["title" => $listName]);
-        $tasks = $this->taskRepository->findAll(["todoList" => $list]);
+        $list = $this->listRepository->findOne(['title' => $listName]);
+        $tasks = $this->taskRepository->findAll(['todoList' => $list]);
 
         $totalCount = count($tasks);
 
-        if($totalCount !== (int) $expectedCount) {
+        if ($totalCount !== (int) $expectedCount) {
             throw new Exception(sprintf(
                 "Expected %d tasks in list '%s', but there is %d",
                 $expectedCount,
@@ -131,10 +128,10 @@ class AddingContext extends MinkContext
     public function listHasTasksNotDone($listName, $expectedCount)
     {
         /** @var TodoList $list */
-        $list = $this->listRepository->findOne(["title" => $listName]);
+        $list = $this->listRepository->findOne(['title' => $listName]);
         $totalCount = count($list->findNotFinishedTasks());
 
-        if($totalCount !== (int) $expectedCount) {
+        if ($totalCount !== (int) $expectedCount) {
             throw new Exception(sprintf(
                 "Expected %d not finished tasks in list '%s', but there is %d",
                 $expectedCount,
@@ -149,17 +146,16 @@ class AddingContext extends MinkContext
      */
     public function iSaveTaskTitledWithNewData($taskTitle, TableNode $table)
     {
-        /** @var Task $list */
-        $task = $this->taskRepository->findOne(["title" => $taskTitle]);
+        /* @var Task $list */
+        $task = $this->taskRepository->findOne(['title' => $taskTitle]);
 
-        foreach($table as $row)
-        {
+        foreach ($table as $row) {
             $updateTaskCommand = new UpdateTask();
             $updateTaskCommand->id = $task->id();
-            $updateTaskCommand->title = $row["title"];
-            $updateTaskCommand->content = $row["content"];
-            $updateTaskCommand->finished = $row["finished"] !== "" ? new Datetime($row["finished"]) : null;
-            $updateTaskCommand->deleted = $row["deleted"] !== "" ? new Datetime($row["deleted"]) : null;
+            $updateTaskCommand->title = $row['title'];
+            $updateTaskCommand->content = $row['content'];
+            $updateTaskCommand->finished = $row['finished'] !== '' ? new Datetime($row['finished']) : null;
+            $updateTaskCommand->deleted = $row['deleted'] !== '' ? new Datetime($row['deleted']) : null;
             $updateTaskCommand->listId = $task->todoList()->id();
 
             $this->updateTaskHandler->handle($updateTaskCommand);
@@ -171,12 +167,12 @@ class AddingContext extends MinkContext
      */
     public function iDeleteTaskTitled($taskTitle)
     {
-        /** @var Task $list */
-        $task = $this->taskRepository->findOne(["title" => $taskTitle]);
+        /* @var Task $list */
+        $task = $this->taskRepository->findOne(['title' => $taskTitle]);
 
         $removeTaskCommand = new RemoveTask();
         $removeTaskCommand->id = $task->id();
-        $removeTaskCommand->deleted = new DateTime("now");
+        $removeTaskCommand->deleted = new DateTime('now');
 
         $this->updateTaskHandler->handle($removeTaskCommand);
     }

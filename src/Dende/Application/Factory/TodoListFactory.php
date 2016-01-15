@@ -4,20 +4,20 @@ namespace Dende\Application\Factory;
 use Dende\Domain\TodoList;
 
 /**
- * Class TodoListFactory
- * @package Dende\Application\Factory
+ * Class TodoListFactory.
  */
 class TodoListFactory
 {
     /**
      * @param array $array
+     *
      * @return TodoList
      */
     public function createFromArray(array $array)
     {
         return new TodoList(
-            $array["id"],
-            $array["title"]
+            $array['id'],
+            $array['title']
         );
     }
 }

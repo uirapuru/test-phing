@@ -6,13 +6,12 @@ use Dende\Domain\Task;
 use Doctrine\ORM\EntityRepository;
 
 /**
- * Class TasksRepository
- * @package Dende\Bundle\AppBundle\Repository
+ * Class TasksRepository.
  */
 class TasksRepository extends EntityRepository implements TaskRepositoryInterface
 {
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function insert(Task $task)
     {
@@ -20,7 +19,7 @@ class TasksRepository extends EntityRepository implements TaskRepositoryInterfac
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function remove(Task $task)
     {
@@ -28,7 +27,7 @@ class TasksRepository extends EntityRepository implements TaskRepositoryInterfac
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function update(Task $task)
     {
@@ -36,7 +35,7 @@ class TasksRepository extends EntityRepository implements TaskRepositoryInterfac
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function findOne(array $parameters = [])
     {

@@ -5,8 +5,7 @@ use Dende\Application\Command\UpdateTask;
 use Dende\Application\Repository\TaskRepositoryInterface;
 
 /**
- * Class UpdateTaskHandler
- * @package Dende\Application\Handler
+ * Class UpdateTaskHandler.
  */
 class UpdateTaskHandler
 {
@@ -15,6 +14,7 @@ class UpdateTaskHandler
 
     /**
      * UpdateTaskHandler constructor.
+     *
      * @param TaskRepositoryInterface $tasksRepository
      */
     public function __construct(TaskRepositoryInterface $tasksRepository)
@@ -25,8 +25,9 @@ class UpdateTaskHandler
     /**
      * @param UpdateTask $command
      */
-    public function handle(UpdateTask $command) {
-        $oldTask = $this->tasksRepository->findOne(["id" => $command->id]);
+    public function handle(UpdateTask $command)
+    {
+        $oldTask = $this->tasksRepository->findOne(['id' => $command->id]);
         $oldTask->updateWithCommand($command);
 
         // throw update event

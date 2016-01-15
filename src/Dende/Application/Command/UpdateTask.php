@@ -2,8 +2,7 @@
 namespace Dende\Application\Command;
 
 /**
- * Class CreateTask
- * @package Dende\Application\Command
+ * Class CreateTask.
  */
 class UpdateTask extends CreateTask
 {

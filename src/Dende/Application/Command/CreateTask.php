@@ -4,15 +4,14 @@ namespace Dende\Application\Command;
 use DateTime;
 
 /**
- * Class CreateTask
- * @package Dende\Application\Command
+ * Class CreateTask.
  */
 class CreateTask
 {
     /** @var string */
     public $title;
 
-    /** @var integer */
+    /** @var int */
     public $listId;
 
     /** @var string */
