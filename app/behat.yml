@@ -4,26 +4,9 @@ default:
             paths:
                 - %paths.base%/Resources/features
             contexts:
-                - Dende\Application\Context\AddingContext: ~
-                - Dende\Application\Context\UpdateContext: ~
-#    extensions:
-#        emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
-#            name: html
-#            renderer: Twig,Behat2
-#            file_name: Index
-##            print_table: true
-#        Behat\Symfony2Extension: ~
-#        Behat\MinkExtension:
-#            sessions:
-#              default:
-#                symfony2: ~
-#            base_url: 'http://127.0.0.1:8000/app_test.php'
-#            default_session: selenium2
-#            javascript_session: selenium2
-#            selenium2:
-#                wd_host: "http://localhost:8643/wd/hub"
-#
-#    formatters:
-#      progress: true
-#      html:
-#        output_path: %paths.base%/build/behat
+                - Dende\Application\Context\FeatureContext: ~
+#        infrastructure:
+#            paths:
+#                - %paths.base%/src/Bundle/AppBundle/Resources/features
+#            contexts:
+#                - Dende\Application\Context\FeatureContext: ~
