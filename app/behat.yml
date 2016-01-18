@@ -4,7 +4,7 @@ default:
             paths:
                 - %paths.base%/Resources/features
             contexts:
-                - Dende\Application\Context\FeatureContext: ~
+                - Dende\Application\Context\AddingContext: ~
 #        infrastructure:
 #            paths:
 #                - %paths.base%/src/Bundle/AppBundle/Resources/features
