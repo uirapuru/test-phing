@@ -11,7 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
  * Class TaskFormType
  * @package Dende\Bundle\AppBundle\Form\Type
  */
-class TaskFormType extends AbstractType
+class ShortTaskFormType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -19,19 +19,17 @@ class TaskFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('id', 'hidden')
+            ->add('title', 'text', ["label" => false])
             ->add('listId', 'hidden')
-            ->add('title', 'text')
-            ->add('content', 'textarea')
             ->add('submit', 'submit', [
-                'label' => 'todo.task_form.update.label'
+                "label" => "todo.task_form.add.label"
             ])
         ;
     }
 
     public function getName()
     {
-        return 'task';
+        return 'short_task';
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
@@ -40,9 +38,6 @@ class TaskFormType extends AbstractType
             'data_class'      => CreateTask::class,
             'csrf_protection' => true,
             'error_bubbling'  => false,
-            'attr' => [
-                'novalidate' => "NOVALIDATE"
-            ]
         ]);
     }
 }

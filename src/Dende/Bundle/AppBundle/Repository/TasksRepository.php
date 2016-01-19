@@ -15,7 +15,8 @@ class TasksRepository extends EntityRepository implements TaskRepositoryInterfac
      */
     public function insert(Task $task)
     {
-        // TODO: Implement insert() method.
+        $this->getEntityManager()->persist($task);
+        $this->getEntityManager()->flush();
     }
 
     /**
@@ -23,7 +24,8 @@ class TasksRepository extends EntityRepository implements TaskRepositoryInterfac
      */
     public function remove(Task $task)
     {
-        // TODO: Implement remove() method.
+        $this->getEntityManager()->remove($task);
+        $this->getEntityManager()->flush();
     }
 
     /**
@@ -31,7 +33,8 @@ class TasksRepository extends EntityRepository implements TaskRepositoryInterfac
      */
     public function update(Task $task)
     {
-        // TODO: Implement update() method.
+        $this->getEntityManager()->merge($task);
+        $this->getEntityManager()->flush();
     }
 
     /**
@@ -39,6 +42,15 @@ class TasksRepository extends EntityRepository implements TaskRepositoryInterfac
      */
     public function findOne(array $parameters = [])
     {
-        // TODO: Implement findOne() method.
+        return $this->findOneBy($parameters);
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function findAll(array $parameters = [])
+    {
+        return parent::findAll();
+    }
+
 }

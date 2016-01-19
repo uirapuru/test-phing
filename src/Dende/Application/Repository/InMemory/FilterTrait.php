@@ -1,6 +1,8 @@
 <?php
 namespace Dende\Application\Repository\InMemory;
 
+use Doctrine\Common\Collections\Collection;
+
 trait FilterTrait
 {
     /**
@@ -8,8 +10,13 @@ trait FilterTrait
      *
      * @return array
      */
-    private function filter(array $data = [], array $parameters = [])
+    private function filter($data, array $parameters = [])
     {
+        if($data instanceof Collection)
+        {
+            $data = $data->toArray();
+        }
+
         if (!array_key_exists('deleted', $parameters)) {
             $parameters['deleted'] = null;
         }

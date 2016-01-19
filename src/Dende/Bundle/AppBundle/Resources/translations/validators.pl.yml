@@ -1,0 +1,4 @@
+---
+todo:
+  validation:
+    title_cant_be_empty: Tytuł nie może być pusty!

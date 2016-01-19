@@ -1,0 +1,5 @@
+Dende\Application\Command\UpdateTask:
+  properties:
+    title:
+      - NotBlank:
+          message: todo.validation.title_cant_be_empty

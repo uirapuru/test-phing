@@ -29,6 +29,7 @@ class UpdateTaskHandler
     {
         $oldTask = $this->tasksRepository->findOne(['id' => $command->id]);
         $oldTask->updateWithCommand($command);
+        $this->tasksRepository->update($oldTask);
 
         // throw update event
     }

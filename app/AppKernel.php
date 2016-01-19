@@ -14,13 +14,13 @@ class AppKernel extends Kernel
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-//            new FOS\UserBundle\FOSUserBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
 
             new Dende\Bundle\AppBundle\TodoAppBundle(),
             new VM\CommonBundle\VMCommonBundle(),
 
+//            new FOS\UserBundle\FOSUserBundle(),
 //            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 //            new SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),
         );

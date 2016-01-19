@@ -9,5 +9,5 @@ interface IdGeneratorInterface
     /**
      * @return mixed
      */
-    public function generate();
+    public function generateId();
 }

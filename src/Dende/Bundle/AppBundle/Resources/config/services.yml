@@ -1,7 +1,55 @@
 ---
+parameters:
+  task.class: Dende\Domain\Task
+  todo_list.class: Dende\Domain\TodoList
+  id_generator.class: Dende\Bundle\AppBundle\Generator\OrmIdGenerator
+  object_manager: doctrine.orm.entity_manager
+
 services:
+  dende_todo.id_generator:
+    class: %id_generator.class%
+    arguments:
+      - @doctrine.orm.entity_manager
+
   dende_todo.factory.todo_list:
     class: Dende\Application\Factory\TodoListFactory
 
   dende_todo.factory.task:
     class: Dende\Application\Factory\TaskFactory
+
+  dende_todo.repository.task:
+    class:            Dende\Bundle\AppBundle\Repository\TasksRepository
+    factory_service:  doctrine.orm.entity_manager
+    factory_method:   getRepository
+    arguments:
+      - %task.class%
+
+  dende_todo.repository.todo_list:
+    class:            Dende\Bundle\AppBundle\Repository\TodoListRepository
+    factory_service:  doctrine.orm.entity_manager
+    factory_method:   getRepository
+    arguments:
+      - %todo_list.class%
+
+  dende_todo.form.task:
+    class: Dende\Bundle\AppBundle\Form\Type\TaskFormType
+    tags:
+      - {name: form.type, alias: task }
+
+  dende_todo.form.short_task:
+    class: Dende\Bundle\AppBundle\Form\Type\ShortTaskFormType
+    tags:
+      - {name: form.type, alias: short_task }
+
+  dende_todo.handler.create_task:
+    class: Dende\Application\Handler\CreateTaskHandler
+    arguments:
+      - @dende_todo.repository.task
+      - @dende_todo.repository.todo_list
+      - @dende_todo.factory.task
+      - @dende_todo.id_generator
+
+  dende_todo.handler.update_task:
+    class: Dende\Application\Handler\UpdateTaskHandler
+    arguments:
+      - @dende_todo.repository.task

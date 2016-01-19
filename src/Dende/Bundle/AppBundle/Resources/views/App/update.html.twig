@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h1>Edit task:</h1>
+
+    {{ form(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path("dende_todo_index") }}">{{ "todo.task_form.update.back_to_list_link"|trans }}</a>
+        </li>
+        {% if not task.isFinished %}
+        <li>
+            <a href="{{ path("dende_todo_finish", {id: task.id}) }}">{{ "todo.task_form.update.finish_link"|trans }}</a>
+        </li>
+        {% endif %}
+        <li>
+            <a href="{{ path("dende_todo_remove", {id: task.id}) }}" onClick="return confirm('{{ "todo.task_form.update.remove_confirmation"|trans }}')">{{ "todo.task_form.update.remove_link"|trans }}</a>
+        </li>
+    </ul>
+{% endblock body %}

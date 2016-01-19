@@ -15,7 +15,8 @@ class TodoListRepository extends EntityRepository implements ListRepositoryInter
      */
     public function insert(TodoList $todoList)
     {
-        // TODO: Implement insert() method.
+        $this->getEntityManager()->persist($todoList);
+        $this->getEntityManager()->flush();
     }
 
     /**
@@ -23,7 +24,8 @@ class TodoListRepository extends EntityRepository implements ListRepositoryInter
      */
     public function remove(TodoList $todoList)
     {
-        // TODO: Implement remove() method.
+        $this->getEntityManager()->remove($todoList);
+        $this->getEntityManager()->flush();
     }
 
     /**
@@ -31,7 +33,8 @@ class TodoListRepository extends EntityRepository implements ListRepositoryInter
      */
     public function update(TodoList $todoList)
     {
-        // TODO: Implement update() method.
+        $this->getEntityManager()->merge($todoList);
+        $this->getEntityManager()->flush();
     }
 
     /**
@@ -39,6 +42,14 @@ class TodoListRepository extends EntityRepository implements ListRepositoryInter
      */
     public function findOne(array $parameters = [])
     {
-        // TODO: Implement findOne() method.
+        return $this->findOneBy($parameters);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function findAll(array $parameters = [])
+    {
+        return parent::findAll();
     }
 }

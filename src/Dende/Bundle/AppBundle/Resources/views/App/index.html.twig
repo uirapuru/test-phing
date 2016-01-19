@@ -1,0 +1,22 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <h1>Todo List:</h1>
+
+    <ul>
+    {% for task in todoList.findTasks %}
+        <li>
+            <a href="{{ path('dende_todo_update', {id: task.id}) }}">
+            {% if task.isFinished %}
+                <strike>{{ task.title }}</strike>
+            {% else %}
+                {{ task.title }}
+            {% endif %}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+    {{ form(form) }}
+
+{% endblock body %}

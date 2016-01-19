@@ -50,7 +50,7 @@ class CreateTaskHandler
         $list = $this->listsRepository->findOne(['id' => $createTaskCommand->listId]);
 
         $task = $this->taskFactory->createFromArray([
-            'id'       => $this->idGenerator->generate(),
+            'id'       => $this->idGenerator->generateId(),
             'title'    => $createTaskCommand->title,
             'content'  => $createTaskCommand->content,
             'list'     => $list,

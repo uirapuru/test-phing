@@ -2,6 +2,7 @@
 namespace Dende\Domain;
 
 use Dende\Application\Repository\InMemory\FilterTrait;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Class TodoList.
@@ -74,7 +75,7 @@ class TodoList
     }
 
     /**
-     * @return array
+     * @return array|ArrayCollection
      */
     public function tasks()
     {
@@ -96,4 +97,15 @@ class TodoList
     {
         return $this->filter($this->tasks(), ['finished' => null]);
     }
+
+
+    /**
+     * @return array|Task
+     */
+    public function findTasks()
+    {
+        return $this->filter($this->tasks(), []);
+    }
+
+
 }

@@ -1,0 +1,22 @@
+---
+
+todo:
+  task_add:
+    success:    Dodano nowe zadanie
+    error:      Nie udało się dodać zadania
+  task_finish:
+    success:    Zamknięto zadanie
+  task_remove:
+      success:  Usunięto zadanie
+  task_update:
+    success:    Zaktualizowano zadanie
+    error:      Nie udało się zaktualizować zadania
+  task_form:
+    add:
+      label:    Dodaj
+    update:
+      label:              Zapisz
+      back_to_list_link:  Powrót do listy
+      remove_link:        Usuń zadanie
+      remove_confirmation:  Czy na pewno usunąć zadanie?
+      finish_link:        Zakończ zadanie
