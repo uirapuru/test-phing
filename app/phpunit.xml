@@ -12,7 +12,7 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
-         bootstrap="bootstrap.php.cache"
+         bootstrap="autoload.php"
 >
     <php>
         <ini name="error_reporting" value="-1" />

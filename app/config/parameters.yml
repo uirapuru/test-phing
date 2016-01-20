@@ -10,3 +10,5 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: c817049b30b3a6ea53fee7aecec05f3501085949
+    sqlite_database_user:       root
+    sqlite_database_password:   root

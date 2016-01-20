@@ -1,6 +1,10 @@
 imports:
     - { resource: config_dev.yml }
 
+parameters:
+    translator.class: Dende\Bundle\AppBundle\Translator\NoTranslator
+
+
 framework:
     test: ~
     session:
@@ -24,10 +28,10 @@ doctrine:
         path:     %kernel.cache_dir%/test.db
 
 liip_functional_test:
-    cache_sqlite_db: true
-    authentication:
-            username: %sqlite_database_user%
-            password: %sqlite_database_password%
+  cache_sqlite_db: true
+  authentication:
+    username: %sqlite_database_user%
+    password: %sqlite_database_password%
 
 security:
     firewalls:
