@@ -7,7 +7,7 @@ use Composer\Autoload\ClassLoader;
  * @var ClassLoader $loader
  */
 $loader = require __DIR__.'/../vendor/autoload.php';
-AnnotationRegistry::registerLoader('class_exists');
+
 AnnotationRegistry::registerLoader(array($loader, 'loadClass'));
 
 return $loader;
