@@ -12,6 +12,18 @@ class UpdateTask extends CreateTask
     /** @var string */
     public $id;
 
+    /** @var string */
+    public $title;
+
+    /** @var int */
+    public $listId;
+
+    /** @var string */
+    public $content;
+
+    /** @var DateTime|null */
+    public $finished;
+
     /** @var DateTime */
     public $deleted;
 

@@ -39,8 +39,8 @@ class AppController extends Controller
             $form->handleRequest($request);
 
             if ($form->isValid()) {
-                //                $this->get("tactician")->handle($form->getData());
-                $this->get('dende_todo.handler.create_task')->handle($form->getData());
+                $this->get("tactician.commandbus")->handle($form->getData());
+//                $this->get('dende_todo.handler.create_task')->handle($form->getData());
                 $this->addFlash('success', 'todo.task_add.success');
 
                 return $this->redirectToRoute('dende_todo_index');
@@ -77,7 +77,8 @@ class AppController extends Controller
             $form->handleRequest($request);
 
             if ($form->isValid()) {
-                $this->get('dende_todo.handler.update_task')->handle($form->getData());
+                $this->get("tactician.commandbus")->handle($form->getData());
+//                $this->get('dende_todo.handler.update_task')->handle($form->getData());
                 $this->addFlash('success', 'todo.task_update.success');
 
                 return $this->redirectToRoute('dende_todo_update', ['id' => $task->id()]);
@@ -96,7 +97,6 @@ class AppController extends Controller
      * @param Request $request
      * @Route("/{id}/finish",  name="dende_todo_finish")
      * @ParamConverter("id", class="App:Task")
-     * @Template()
      *
      * @return array
      */
@@ -106,7 +106,8 @@ class AppController extends Controller
         $command->populateWithTask($task);
         $command->finished = new \DateTime('now');
 
-        $this->get('dende_todo.handler.update_task')->handle($command);
+        $this->get("tactician.commandbus")->handle($command);
+//        $this->get('dende_todo.handler.update_task')->handle($command);
 
         $this->addFlash('success', 'todo.task_finish.success');
 
@@ -117,7 +118,6 @@ class AppController extends Controller
      * @param Request $request
      * @Route("/{id}/remove",  name="dende_todo_remove")
      * @ParamConverter("id", class="App:Task")
-     * @Template()
      *
      * @return array
      */
@@ -127,7 +127,8 @@ class AppController extends Controller
         $command->populateWithTask($task);
         $command->deleted = new \DateTime('now');
 
-        $this->get('dende_todo.handler.update_task')->handle($command);
+        $this->get("tactician.commandbus")->handle($command);
+//        $this->get('dende_todo.handler.update_task')->handle($command);
 
         $this->addFlash('warning', 'todo.task_remove.success');
 

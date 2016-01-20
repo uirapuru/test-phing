@@ -19,7 +19,7 @@ class AppKernel extends Kernel
 
             new Dende\Bundle\AppBundle\TodoAppBundle(),
             new VM\CommonBundle\VMCommonBundle(),
-
+            new League\Tactician\Bundle\TacticianBundle(),
 //            new FOS\UserBundle\FOSUserBundle(),
 //            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
 //            new SmartCore\Bundle\AcceleratorCacheBundle\AcceleratorCacheBundle(),

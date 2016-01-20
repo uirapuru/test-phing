@@ -48,8 +48,13 @@ services:
       - @dende_todo.repository.todo_list
       - @dende_todo.factory.task
       - @dende_todo.id_generator
+    tags:
+      - {name: tactician.handler, command: Dende\Application\Command\CreateTask }
 
   dende_todo.handler.update_task:
     class: Dende\Application\Handler\UpdateTaskHandler
     arguments:
       - @dende_todo.repository.task
+    tags:
+      - {name: tactician.handler, command: Dende\Application\Command\UpdateTask }
+      - {name: tactician.handler, command: Dende\Application\Command\RemoveTask }
