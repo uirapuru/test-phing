@@ -2,14 +2,12 @@
 namespace Dende\Bundle\AppBundle\Form\Type;
 
 use Dende\Application\Command\CreateTask;
-use Dende\Domain\Task;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
- * Class TaskFormType
- * @package Dende\Bundle\AppBundle\Form\Type
+ * Class TaskFormType.
  */
 class ShortTaskFormType extends AbstractType
 {
@@ -19,12 +17,11 @@ class ShortTaskFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('title', 'text', ["label" => false])
+            ->add('title', 'text', ['label' => false])
             ->add('listId', 'hidden')
             ->add('submit', 'submit', [
-                "label" => "todo.task_form.add.label"
-            ])
-        ;
+                'label' => 'todo.task_form.add.label',
+            ]);
     }
 
     public function getName()

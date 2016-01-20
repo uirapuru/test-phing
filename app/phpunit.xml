@@ -20,14 +20,14 @@
 
     <testsuites>
         <testsuite name="functional">
-            <directory>../src/Dende/Bundle/*/Test/Unit/**</directory>
+            <directory>../src/Dende/Bundle/*/Test/Functional/</directory>
         </testsuite>
-        <testsuite name="integration">
-            <directory>../src/Dende/Bundle/*/Test/Unit/**</directory>
-        </testsuite>
-        <testsuite name="unit">
-            <directory>../src/Dende/Application/Test/Unit/**</directory>
-        </testsuite>
+        <!--<testsuite name="integration">-->
+            <!--<directory>../src/Dende/Bundle/*/Test/Unit/**</directory>-->
+        <!--</testsuite>-->
+        <!--<testsuite name="unit">-->
+            <!--<directory>../src/Dende/Application/Test/Unit/**</directory>-->
+        <!--</testsuite>-->
     </testsuites>
 
     <php>

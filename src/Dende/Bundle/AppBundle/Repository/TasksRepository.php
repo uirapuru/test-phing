@@ -46,11 +46,10 @@ class TasksRepository extends EntityRepository implements TaskRepositoryInterfac
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function findAll(array $parameters = [])
     {
         return parent::findAll();
     }
-
 }

@@ -8,8 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
- * Class TaskFormType
- * @package Dende\Bundle\AppBundle\Form\Type
+ * Class TaskFormType.
  */
 class TaskFormType extends AbstractType
 {
@@ -24,9 +23,8 @@ class TaskFormType extends AbstractType
             ->add('title', 'text')
             ->add('content', 'textarea')
             ->add('submit', 'submit', [
-                'label' => 'todo.task_form.update.label'
-            ])
-        ;
+                'label' => 'todo.task_form.update.label',
+            ]);
     }
 
     public function getName()
@@ -40,9 +38,9 @@ class TaskFormType extends AbstractType
             'data_class'      => CreateTask::class,
             'csrf_protection' => true,
             'error_bubbling'  => false,
-            'attr' => [
-                'novalidate' => "NOVALIDATE"
-            ]
+            'attr'            => [
+                'novalidate' => 'NOVALIDATE',
+            ],
         ]);
     }
 }

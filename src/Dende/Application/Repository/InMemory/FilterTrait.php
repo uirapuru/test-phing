@@ -12,8 +12,7 @@ trait FilterTrait
      */
     private function filter($data, array $parameters = [])
     {
-        if($data instanceof Collection)
-        {
+        if ($data instanceof Collection) {
             $data = $data->toArray();
         }
 

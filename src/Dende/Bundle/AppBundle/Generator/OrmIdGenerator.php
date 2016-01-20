@@ -6,8 +6,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Id\UuidGenerator;
 
 /**
- * Class IdGenerator
- * @package Dende\CalendarBundle\Service
+ * Class IdGenerator.
  */
 final class OrmIdGenerator extends UuidGenerator implements IdGeneratorInterface
 {
@@ -17,6 +16,7 @@ final class OrmIdGenerator extends UuidGenerator implements IdGeneratorInterface
     private $em;
     /**
      * IdGenerator constructor.
+     *
      * @param EntityManagerInterface $em
      */
     public function __construct(EntityManagerInterface $em)

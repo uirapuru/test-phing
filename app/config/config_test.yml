@@ -4,9 +4,10 @@ imports:
 framework:
     test: ~
     session:
-        storage_id: session.storage.mock_file
+        storage_id: session.storage.filesystem
     profiler:
-        collect: false
+        collect: true
+        only_exceptions: false
 
 web_profiler:
     toolbar: false
@@ -14,3 +15,21 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+doctrine:
+    dbal:
+        driver:   pdo_sqlite
+        dbname:   %database_name%
+        charset:  UTF8
+        path:     %kernel.cache_dir%/test.db
+
+liip_functional_test:
+    cache_sqlite_db: true
+    authentication:
+            username: %sqlite_database_user%
+            password: %sqlite_database_password%
+
+security:
+    firewalls:
+        main:
+            http_basic: ~

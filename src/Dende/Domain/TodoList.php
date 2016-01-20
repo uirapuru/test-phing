@@ -98,7 +98,6 @@ class TodoList
         return $this->filter($this->tasks(), ['finished' => null]);
     }
 
-
     /**
      * @return array|Task
      */
@@ -106,6 +105,4 @@ class TodoList
     {
         return $this->filter($this->tasks(), []);
     }
-
-
 }

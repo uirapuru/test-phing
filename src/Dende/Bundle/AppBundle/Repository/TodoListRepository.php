@@ -46,7 +46,7 @@ class TodoListRepository extends EntityRepository implements ListRepositoryInter
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     public function findAll(array $parameters = [])
     {
