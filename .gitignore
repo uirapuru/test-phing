@@ -2,4 +2,5 @@
 /bin/
 /app/cache/*
 /app/logs/*
+.php_cs.cache
 /.idea/

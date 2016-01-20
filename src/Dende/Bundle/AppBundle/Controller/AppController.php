@@ -4,7 +4,6 @@ namespace Dende\Bundle\AppBundle\Controller;
 use Dende\Application\Command\CreateTask;
 use Dende\Application\Command\UpdateTask;
 use Dende\Domain\Task;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -39,7 +38,7 @@ class AppController extends Controller
             $form->handleRequest($request);
 
             if ($form->isValid()) {
-                $this->get("tactician.commandbus")->handle($form->getData());
+                $this->get('tactician.commandbus')->handle($form->getData());
 //                $this->get('dende_todo.handler.create_task')->handle($form->getData());
                 $this->addFlash('success', 'todo.task_add.success');
 
@@ -77,7 +76,7 @@ class AppController extends Controller
             $form->handleRequest($request);
 
             if ($form->isValid()) {
-                $this->get("tactician.commandbus")->handle($form->getData());
+                $this->get('tactician.commandbus')->handle($form->getData());
 //                $this->get('dende_todo.handler.update_task')->handle($form->getData());
                 $this->addFlash('success', 'todo.task_update.success');
 
@@ -106,7 +105,7 @@ class AppController extends Controller
         $command->populateWithTask($task);
         $command->finished = new \DateTime('now');
 
-        $this->get("tactician.commandbus")->handle($command);
+        $this->get('tactician.commandbus')->handle($command);
 //        $this->get('dende_todo.handler.update_task')->handle($command);
 
         $this->addFlash('success', 'todo.task_finish.success');
@@ -127,7 +126,7 @@ class AppController extends Controller
         $command->populateWithTask($task);
         $command->deleted = new \DateTime('now');
 
-        $this->get("tactician.commandbus")->handle($command);
+        $this->get('tactician.commandbus')->handle($command);
 //        $this->get('dende_todo.handler.update_task')->handle($command);
 
         $this->addFlash('warning', 'todo.task_remove.success');

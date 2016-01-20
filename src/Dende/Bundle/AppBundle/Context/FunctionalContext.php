@@ -42,7 +42,6 @@ class FunctionalContext extends MinkContext
      */
     public function iAmOnPath()
     {
-        file_put_contents("/tmp/test.png", $this->getSession()->getScreenshot());
-
+        file_put_contents('/tmp/test.png', $this->getSession()->getScreenshot());
     }
 }
