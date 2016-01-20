@@ -1,7 +1,6 @@
 <?php
 namespace Dende\Bundle\AppBundle\Test;
 
-use Doctrine\Common\Annotations\AnnotationRegistry;
 use Liip\FunctionalTestBundle\Test\WebTestCase;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpKernel\Client;

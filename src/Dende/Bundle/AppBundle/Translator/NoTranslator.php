@@ -38,6 +38,5 @@ class NoTranslator implements TranslatorInterface, TranslatorBagInterface
 
     public function setConfigCacheFactory()
     {
-
     }
 }

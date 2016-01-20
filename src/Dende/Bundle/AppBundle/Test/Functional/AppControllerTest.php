@@ -4,8 +4,9 @@ namespace Dende\Bundle\AppBundle\Test\Functional;
 use Dende\Bundle\AppBundle\Test\BaseFunctionalTest;
 
 /**
- * Class AppControllerTest
- * @package Dende\Bundle\AppBundle\Test\Functional
+ * Class AppControllerTest.
+ *
+ * @codingStandardsIgnoreStart
  */
 class AppControllerTest extends BaseFunctionalTest
 {
@@ -17,19 +18,19 @@ class AppControllerTest extends BaseFunctionalTest
         $crawler = $this->client->request('GET', '/');
         $this->assertEquals(200, $this->getStatusCode());
 
-        $list = $crawler->filter("ul > li");
+        $list = $crawler->filter('ul > li');
 
         $this->assertCount(3, $list);
         $this->assertContains("First task's title", $list->eq(0)->text());
         $this->assertContains("Second task's title", $list->eq(1)->text());
-        $this->assertContains("Finished task", $list->eq(2)->text());
+        $this->assertContains('Finished task', $list->eq(2)->text());
 
-        $this->assertEquals(1, $crawler->filter("input[type=text]")->count());
-        $this->assertEquals(1, $crawler->filter("button")->count());
+        $this->assertEquals(1, $crawler->filter('input[type=text]')->count());
+        $this->assertEquals(1, $crawler->filter('button')->count());
 
-        $this->assertEquals("todo.task_form.add.label", $crawler->filter("button")->text());
+        $this->assertEquals('todo.task_form.add.label', $crawler->filter('button')->text());
 
-        $tasks = $this->getContainer()->get("dende_todo.repository.task")->findAll();
+        $tasks = $this->getContainer()->get('dende_todo.repository.task')->findAll();
 
         $this->assertCount(5, $tasks);
     }
@@ -45,7 +46,7 @@ class AppControllerTest extends BaseFunctionalTest
         $form = $crawler->filter('form')->first()->form();
 
         $form->setValues([
-            "short_task[title]" => "my test task was added !!!"
+            'short_task[title]' => 'my test task was added !!!',
         ]);
 
         $crawler = $this->client->submit($form);
@@ -55,11 +56,14 @@ class AppControllerTest extends BaseFunctionalTest
         $alert = $crawler->filter('div.alert.alert-success');
         $this->assertEquals('todo.task_add.success', trim($alert->text()));
 
-        $tasks = $this->getContainer()->get("dende_todo.repository.task")->findOneBy([
-            "title" => "my test task was added !!!"
+        $tasks = $this->getContainer()->get('dende_todo.repository.task')->findOneBy([
+            'title' => 'my test task was added !!!',
         ]);
 
         $this->assertNotNull($tasks);
-        $this->assertEquals($tasks->title(), "my test task was added !!!");
+        $this->assertEquals($tasks->title(), 'my test task was added !!!');
     }
+    /*
+     * * @codingStandardsIgnoreEnd
+     */
 }
