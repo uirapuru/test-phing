@@ -13,7 +13,6 @@ phantomjs:
           - %paths.base%/../src/Dende/Bundle/AppBundle/Resources/features
       contexts:
           - Dende\Bundle\AppBundle\Context\FunctionalContext: ~
-
   extensions:
     Behat\Symfony2Extension: ~
     Behat\MinkExtension:
@@ -43,3 +42,23 @@ firefox:
           browser_name: firefox
           selenium2:
             wd_host: "http://127.0.0.1:4444/wd/hub"
+
+phantomjs-diagnoza:
+  suites:
+    default:
+      paths:
+          - %paths.base%/../src/Dende/Bundle/AppBundle/Resources/features_diagnoza
+      contexts:
+          - Dende\Bundle\AppBundle\Context\DiagnozaContext: ~
+  extensions:
+    Behat\Symfony2Extension: ~
+    Behat\MinkExtension:
+      sessions:
+        default:
+          selenium2:
+              wd_host: "http://localhost:8643/wd/hub"
+      base_url: 'https://matura-diagnoza.nowaera.pl'
+      default_session: selenium2
+      javascript_session: selenium2
+      selenium2:
+          wd_host: "http://localhost:8643/wd/hub"
