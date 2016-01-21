@@ -26,3 +26,20 @@ phantomjs:
       javascript_session: selenium2
       selenium2:
           wd_host: "http://localhost:8643/wd/hub"
+
+firefox:
+  suites:
+    default:
+      paths:
+          - %paths.base%/../src/Dende/Bundle/AppBundle/Resources/features
+      contexts:
+          - Dende\Bundle\AppBundle\Context\FunctionalContext: ~
+
+  extensions:
+      Behat\Symfony2Extension: ~
+      Behat\MinkExtension:
+          base_url: 'http://127.0.0.1:8000/app_test.php'
+          javascript_session:  'selenium2'
+          browser_name: firefox
+          selenium2:
+            wd_host: "http://127.0.0.1:4444/wd/hub"
