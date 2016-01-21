@@ -31,14 +31,14 @@ firefox:
   suites:
     default:
       paths:
-          - %paths.base%/../src/Dende/Bundle/AppBundle/Resources/features
+          - %paths.base%/../src/Dende/Bundle/AppBundle/Resources/features_diagnoza
       contexts:
-          - Dende\Bundle\AppBundle\Context\FunctionalContext: ~
+          - Dende\Bundle\AppBundle\Context\DiagnozaContext: ~
 
   extensions:
       Behat\Symfony2Extension: ~
       Behat\MinkExtension:
-          base_url: 'http://127.0.0.1:8000/app_test.php'
+          base_url: 'https://matura-diagnoza.nowaera.pl'
           javascript_session:  'selenium2'
           browser_name: firefox
           selenium2:
